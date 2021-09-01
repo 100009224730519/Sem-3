@@ -1,0 +1,101 @@
+Oracle SQL commands
+
+To create table:
+
+Create Table "Table_Name" (Name varchar2(20),Age Number(3),Gender char(1) );
+
+Data types: 
+
+Varchar2 or Varchar   ---> 'Vishek','Abhijeet','Tushar' ,'Yashwanth' ,'12001921'
+
+Date        -----> '2021-08-31'
+
+Timestamp   ---->  '2021-08-31 14:56:12'
+
+Number      ----> 12,45454,565,78,65,4000
+
+Char        ----> 'SN100','SN101','SN102','SN103'  (Fixed lenght of characters)
+
+Blob        ----> Binary large objects like (Image or Video File)
+
+Boolean (There's no default datatype in Oracle DBMS) 
+
+*Try to use Char(1) as Boolean and store only one character
+
+Example -- 'Y' or 'N'  (Yes or No)
+
+To Delete or Drop a table:
+
+Drop Table "Table_Name";
+
+To know the schema or structure of the Table:
+
+Desc "Table_Name";
+
+To insert data or records into the Table:
+
+Insert into "Table_name" values ('Your_Name',20,'M');
+
+Insert into "Table_name" values ('Abhijeet', 20,'M');
+
+Insert into "Table_name" values ('Tushar', 20,'M');
+
+Insert into "Table_name" values ('Vishek',20,'M');
+
+Insert into "Tabel_name" values ('Yashwanth,20,'M');
+
+To show the all the records or row of the Table:
+
+Select * from "Table_name";
+
+To show the records of a particular Column:
+
+Select Name,Age from "Table_name";
+
+To delete a column or Attribute from a table:
+
+Alter Table "Table_name" Drop(Name); // It will remove Name field from the Table
+
+Alter Table "Table_name" Drop(Age);  // It will remove Age field from the Table;
+
+To change the datatype in a table:
+
+Alter Table "Table_name" Modify("Column_name" datatype);
+
+Alter Table "Table_name" Modify(Age number(4)); // Age will be 4 digits longs
+
+To add a column or field in a Table:
+
+Alter table "Table_name" Add (Reg_no Char(8));
+
+To update or add a value to a record(row) in Table:
+
+Update "Table_name" set Name='Patel' where Name='Vishek';
+
+Update "Table_name" set Name='Singh where Name='Singh';
+
+                     Or 
+
+Update "Table_name set Name='Student_name'; //Set all the Names of each record to 'Student_name'
+
+To delete a particular record or row from a Table:
+
+Delete from "Table_name" Where Name='Vishek'; //It will delete the Record have a Name='Vishek'
+
+To delete complete records or rows in a Table:
+
+Delete from "Table_name";
+
+        OR
+
+Truncate "Table_name";
+
+"commit"; creates a save point . 
+
+even if you make any changes to the table it will "rollback" (Using Rollback;) 
+
+you to that particular save point, 
+
+iff you have not truncated the table , i repeat not truncated 
+
+you are free to use "delete command" to Delete the table but if you want to go to particular save point make sure that you don't "truncate" the table;
